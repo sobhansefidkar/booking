@@ -1,0 +1,153 @@
+@font-face {
+    font-family: vazir;
+    src: url("../public/fonts/vazir.woff") format("woff");
+}
+:root{
+    --color-1 : "teal";
+    --color-2 : "white"
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.home{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: vazir;
+}
+.container{
+    width: 500px;
+    height: 500px;
+}
+.mode{
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    direction: rtl;
+    text-align: center;
+}
+.mode button{
+    height: 30px;
+    width: 100px;
+    font-family: "vazir";
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+.mode .blight{
+    background-color: teal;
+}
+.mode .bdark{
+    background-color: rgb(49, 53, 53);
+}
+.take-appointment.dark{
+    background-color: rgb(49, 53, 53);
+}
+.take-appointment.light{
+    background-color: teal;
+}
+.take-appointment{
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    box-shadow: 3px 3px 10px 3px gray;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.header{
+    width: 100%;
+    height: 30%;
+}
+.header > ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items:center ;
+    overflow-x: scroll;
+    direction: rtl;
+}
+.header ul li{
+    margin: 0 20px;
+    padding: 0 20px;
+    font-size: 15px;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+.header ul li.active{
+    border: 2px solid black;
+}
+.body{
+    width: 100%;
+    height: 70%;
+}
+.body > h3{
+    width: 100%;
+    text-align: center;
+}
+.body > ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.body > .animation {
+    animation: 0.5s showTimes 1;
+}
+@keyframes showTimes {
+    0%{
+        margin-top: 20px;
+        opacity: 0;
+    }
+    100%{
+        margin-top: 0;
+        opacity: 1;
+    }
+}
+.body > ul > li {
+    width: 45%;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.body > ul .active{
+    pointer-events: none;
+    background-color: crimson;
+}
+.body > ul .disactive{
+    border: 2px solid white;
+    color: white;
+    transition: 0.3s;
+}
+.body > ul .disactive:hover{
+    background-color: white;
+    color: black;
+}
+@media screen and (max-width : 550px) {
+    .container{
+        width: 300px;
+        height: 500px;
+    }
+    .mode{
+        width: 300px;
+        justify-content: center;
+    }
+}
